@@ -1,37 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-#include <stdio.h>
-#include <stdlib.h>
-#include "functions.h"
-#define _CRT_SECURE_NO_WARNINGS
 
-int main()
-{
-    int files_count = 0;
-    // тази функция създава масива, като прочита информацията от бинарен файл и я зарежда в динамична структура
-    ELEMENT* array = read_array(&files_count);
-
-    int option;
-    // безкраен цикъл
-    while (1)
-    {
-        printf("\nSelect option:\n");
-        printf("Enter 1 to find a file\n");
-        printf("Enter 2 to add a new file\n");
-        printf("Enter 3 to display info about directory - size and files\n");
-        printf("Enter 0 to save changes and exit the program\n");
-        printf("Your choise: ");
-
-        scanf("%d",&option);
-        switch (option)
-        {
-            case 1: search_file(array, files_count); break; // тази функция извежда инфо за файл посочен от потребителя
-            case 2: array = add_new_element(array, &files_count); break; // чрез тази функция, потребителят може да добави нов файл в масива
-            case 3: view_dir_info(array, files_count); break; // тази функция принтира данните за папка посочена от потребителя
-            case 0: exitProgramm(array, files_count); break; // тази функция запазва на ново файла, като презаписва информацията ако има някакви промени
-            default: printf("Incorrect input! Try again!\n");
-        }
-    }
-    return 0;
-}
 
