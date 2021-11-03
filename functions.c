@@ -97,7 +97,7 @@ void find_file(NODE * array, int files_count)
     scanf("%s", filename); // прочитаме името на файла
     int found = 0;
     int i;
-    // обхождаме масива от файлове
+    
     for (i = 0; i < files_count; i++)
     {
         // проверяваме дали името на текущия файл съдържа въведеното от потребителя име на файл
@@ -177,6 +177,6 @@ void exitProgramm(NODE* array, int files_count)
     free(array);
     fclose(fp);
 
-    // успех
+    
     exit(0);
 }
